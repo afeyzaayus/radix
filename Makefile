@@ -10,13 +10,14 @@ SRC = 	check.c \
 		stack_utils.c \
 		stack.c \
 		swap.c \
-		utils.c
+		utils.c \
+		./getnl/get_next_line.c \
+		./getnl/get_next_line_utils.c
 
 OBJ = $(SRC:.c=.o)
 
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
-
 
 all: $(NAME)
 

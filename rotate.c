@@ -84,3 +84,17 @@ int rb(t_stack **stack_b)
     }
     return (0);
 }
+
+int rr(t_stack **a, t_stack **b)
+{
+    if (ra(a) && rb(b))
+        return (1);
+    return (0);
+}
+
+int rrr(t_stack **a, t_stack **b)
+{
+    if (rra(a) && rrb(b))
+        return (1);
+    return (0);
+}
