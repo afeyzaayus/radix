@@ -8,7 +8,7 @@ int push_swap(char **argv)
     arr = parse_args(argv);
     if (!arr)
         return (free_split(arr));
-    head = stack_a_init(argv, ft_strlen_2d(arr));
+    head = stack_a_init(arr, ft_strlen_2d(arr));
     if (!head)
         return(free_split(arr));
     if (is_sorted(head));

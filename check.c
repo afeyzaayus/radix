@@ -14,7 +14,7 @@ static int	is_valid_number(char *str)
 	return (1);
 }
 
-static int has_same_number(char **str)
+int has_same_number(char **str)
 {
     int i;
     int j;

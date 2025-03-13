@@ -103,8 +103,8 @@ int sort(t_stack **head_a)
         return (sa(head_a));
     else if (size > 2 && size <= 6)
         return (sort_small(head_a, &head_b));
-    else if (size > 6)
-        radix_sort(head_a, &head_b);
+    // else if (size > 6)
+    //     radix_sort(head_a, &head_b);
     free_stack(head_b);
         
 }

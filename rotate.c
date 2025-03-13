@@ -64,3 +64,23 @@ int ra(t_stack **stack_a)
     }
     return (0);
 }
+
+int rrb(t_stack **stack_b)
+{
+    if (reverse_rotate(stack_b))
+    {
+        write(1, "rrb\n", 4);
+        return (1);
+    }
+    return (0);
+}
+
+int rb(t_stack **stack_b)
+{
+    if (rotate(stack_b))
+    {
+        write(1, "rb\n", 3);
+        return (1);
+    }
+    return (0);
+}
