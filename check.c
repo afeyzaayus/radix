@@ -47,6 +47,7 @@ int check_arguments(int argc, char **argv)
     {
         if (!is_valid_number(argv[i]))
             return (0);
+        i++;
     }
     if (has_same_number(argv))
         return (0);

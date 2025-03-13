@@ -1,4 +1,18 @@
 #include "push_swap.h"
+#include <stdio.h>
+
+void print_list(t_stack **a)
+{
+    t_stack *temp;
+
+    temp = *a;
+    while (temp)
+    {
+        printf("%d ",temp->data);
+        temp = temp->next;
+    }
+    
+}
 
 int push_swap(char **argv)
 {
@@ -7,18 +21,16 @@ int push_swap(char **argv)
 
     arr = parse_args(argv);
     if (!arr)
-        return (free_split(arr));
+    return (free_split(arr));
     head = stack_a_init(arr, ft_strlen_2d(arr));
+    free_split(arr);
     if (!head)
-        return(free_split(arr));
-    if (is_sorted(head));
+    return(0);
+    if (is_sorted(head))
         if (!free_stack(head))
-            return (free_split(arr));
-    
-
-    
-    
-
+            return (0);
+    sort(&head);
+    print_list(&head);
 }
 
 int main(int argc, char *argv[])

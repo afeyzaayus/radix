@@ -77,10 +77,10 @@ int sort_small(t_stack **a, t_stack **b)
     while (i < size - 3)
     {
         smart_rotate(a);
-        if (is_sorted(a))
-            break;
+        if (is_sorted(*a))
+        break;
         if (!pb(a, b))
-            return (0);
+        return (0);
         i++;
     }
     sort_three(a);
@@ -101,7 +101,7 @@ int sort(t_stack **head_a)
     size = stack_size(*head_a);
     if (size == 2)
         return (sa(head_a));
-    else if (size > 2 && size <= 6)
+    else if (size <= 6)
         return (sort_small(head_a, &head_b));
     // else if (size > 6)
     //     radix_sort(head_a, &head_b);

@@ -25,3 +25,4 @@ int rra(t_stack **stack_a);
 int ra(t_stack **stack_a);
 int pb(t_stack **a, t_stack **b);
 int pa(t_stack **a, t_stack **b);
+int sort(t_stack **head_a);

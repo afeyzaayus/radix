@@ -55,17 +55,8 @@ t_stack *stack_a_init(char **arr, int len)
     while (len >= 0)
     {
         num = ft_atoi(arr[len]);
-        if (!head)
-        {
-            head = create_node(num);
-            if (!head)
-                return (NULL);
-        }
-        else
-        {
-            if (!stack_add_front(&head, create_node(num)))
-                return (free_stack(head));
-        }
+        if (!stack_add_front(&head, create_node(num)))
+            return (free_stack(head));
         len--;
     }
     return (head);
