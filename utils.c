@@ -77,3 +77,36 @@ char **parse_args(char **argv)
     return (arr);
 
 }
+
+
+static int	ft_isspace(int c)
+{
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}
+
+long	ft_atol(const char *str)
+{
+	int	i;
+	long	result;
+	int	sign;
+
+	i = 0;
+	result = 0;
+	sign = 1;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
+}

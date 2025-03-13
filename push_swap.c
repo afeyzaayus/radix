@@ -35,6 +35,8 @@ int push_swap(char **argv)
 
 int main(int argc, char *argv[])
 {
+    if (argc == 1)
+        return (0);
     if (!check_arguments(argc, argv))
     {
         write(2, "Error\n", 6);

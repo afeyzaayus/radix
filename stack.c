@@ -54,7 +54,9 @@ t_stack *stack_a_init(char **arr, int len)
     head = NULL;
     while (len >= 0)
     {
-        num = ft_atoi(arr[len]);
+        num = ft_atol(arr[len]);
+        if (num > 2147483647 || num < -2147483648)
+			return (free_stack(head));
         if (!stack_add_front(&head, create_node(num)))
             return (free_stack(head));
         len--;

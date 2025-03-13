@@ -40,16 +40,18 @@ int check_arguments(int argc, char **argv)
     char **arr;
     int i;
 
-    i = 1;
-    if (argc == 1)
-        return (0);
-    while (argv[i])
+    if (argc > 2)
     {
-        if (!is_valid_number(argv[i]))
+        i = 1;
+        while (argv[i])
+        {
+            if (!is_valid_number(argv[i]))
+                return (0);
+            i++;
+        }
+        if (has_same_number(argv))
             return (0);
-        i++;
     }
-    if (has_same_number(argv))
-        return (0);
+    
     return (1);
 }

@@ -10,7 +10,8 @@ SRC = 	check.c \
 		stack_utils.c \
 		stack.c \
 		swap.c \
-		utils.c
+		utils.c \
+		radix.c
 
 OBJ = $(SRC:.c=.o)
 
