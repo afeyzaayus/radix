@@ -14,12 +14,12 @@ void print_list(t_stack **a)
     
 }
 
-int push_swap(char **argv)
+int push_swap(int argc, char **argv)
 {
     t_stack *head;
     char **arr;
 
-    arr = parse_args(argv);
+    arr = parse_args(argc, argv);
     if (!arr)
     return (free_split(arr));
     head = stack_a_init(arr, ft_strlen_2d(arr));
@@ -42,6 +42,6 @@ int main(int argc, char *argv[])
         write(2, "Error\n", 6);
         exit(0);
     }
-    push_swap(argv);
+    push_swap(argc, argv);
     return 0;
 }

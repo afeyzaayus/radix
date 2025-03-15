@@ -12,7 +12,7 @@ typedef struct s_stack
 int check_arguments(int argc, char **argv);
 int free_split(char **split);
 int has_same_number(char **str);
-char **parse_args(char **argv);
+char **parse_args(int argc, char **argv);
 t_stack *stack_a_init(char **arr, int len);
 int ft_strlen_2d(char **arr);
 int is_sorted(t_stack *stack);

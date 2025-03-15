@@ -26,7 +26,9 @@ int has_same_number(char **str)
         j = i + 1;
         while (str[j])
         {
-            if (!ft_strncmp(str[i], str[j], ft_strlen(str[i])))
+            // if (!ft_strncmp(str[i], str[j], ft_strlen(str[i])))
+            //     return (1);
+            if (ft_atoi(str[i]) == ft_atoi(str[j]))
                 return (1);
             j++;
         }
@@ -40,7 +42,7 @@ int check_arguments(int argc, char **argv)
     char **arr;
     int i;
 
-    if (argc > 2)
+    if (argc >= 2)
     {
         i = 1;
         while (argv[i])

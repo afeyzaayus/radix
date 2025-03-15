@@ -49,33 +49,38 @@ char **ft_strjoin_2d(char **arr, char **split)
     return ptr;
 }
 
-char **parse_args(char **argv)
+char **parse_args(int argc, char **argv)
 {
     char **arr;
-    char **split;
+    //char **split;
     int i;
 
     arr = ft_calloc(1, sizeof(char *));
     if (!arr)
         return NULL;
+    if (argc == 2)
+    {
+        arr = ft_split(argv[1], ' ');
+        return (arr);
+    }
+    
     i = 1;
     while (argv[i])
     {
-        split = ft_split(argv[i], ' ');
-        if (!split)
-            break;
-        arr = ft_strjoin_2d(arr, split);
+        // split = ft_split(argv[i], ' ');
+        // if (!split)
+        //     break;
+        arr = ft_strjoin_2d(arr, argv[i]);
         if (!arr)
             break;
         i++;
     }
-    if (!split || !arr)
+    if (!arr)
     {
         free_split(arr); // double free?
         return (NULL);
     }
     return (arr);
-
 }
 
 
