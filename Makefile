@@ -1,6 +1,7 @@
 NAME = push_swap
 
 CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = 	check.c \
 		push_swap.c \
@@ -23,7 +24,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 		make -C $(LIBFT_PATH)
-		$(CC) $(OBJ) $(LIBFT) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 clean:
 		make -C $(LIBFT_PATH) clean

@@ -9,6 +9,7 @@ static int find_rotates(t_stack *stack)
 
     i = 0;
     temp = stack;
+    assign_tag_zero(&stack);
     min = stack_min(temp);
     while (temp != min)
     {
@@ -94,17 +95,23 @@ int sort_small(t_stack **a, t_stack **b)
 
 int sort(t_stack **head_a)
 {
+    int value;
     t_stack *head_b;
     int size;
 
     head_b = NULL;
     size = stack_size(*head_a);
     if (size == 2)
-        return (sa(head_a));
+        value = sa(head_a);
     else if (size <= 6)
-        return (sort_small(head_a, &head_b));
+    {
+        value = sort_small(head_a, &head_b);
+        free_stack(head_b);
+    }
     else if (size > 6)
-        radix_sort(head_a, &head_b);
-    free_stack(head_b);
-        
+    {
+        value = radix_sort(head_a, &head_b);
+        free_stack(head_b);
+    }
+    return (value);
 }

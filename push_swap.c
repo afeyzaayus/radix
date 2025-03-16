@@ -1,36 +1,37 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void print_list(t_stack **a)
-{
-    t_stack *temp;
+// void print_list(t_stack **a)
+// {
+//     t_stack *temp;
 
-    temp = *a;
-    while (temp)
-    {
-        printf("%d ",temp->data);
-        temp = temp->next;
-    }
+//     temp = *a;
+//     while (temp)
+//     {
+//         printf("%d ",temp->data);
+//         temp = temp->next;
+//     }
     
-}
+// }
 
-int push_swap(int argc, char **argv)
+int push_swap(char **argv)
 {
     t_stack *head;
     char **arr;
 
-    arr = parse_args(argc, argv);
+    arr = parse_args(argv);
     if (!arr)
-    return (free_split(arr));
+        return (free_arr_2d(arr));
     head = stack_a_init(arr, ft_strlen_2d(arr));
-    free_split(arr);
+    free_arr_2d(arr);
     if (!head)
-    return(0);
+        return(0);
     if (is_sorted(head))
         if (!free_stack(head))
             return (0);
     sort(&head);
-    print_list(&head);
+    free_stack(head);
+    return (1);
 }
 
 int main(int argc, char *argv[])
@@ -42,6 +43,6 @@ int main(int argc, char *argv[])
         write(2, "Error\n", 6);
         exit(0);
     }
-    push_swap(argc, argv);
+    push_swap(argv);
     return 0;
 }

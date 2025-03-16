@@ -25,7 +25,7 @@ int pa(t_stack **a, t_stack **b)
 {
     if (push(b, a))
     {
-        write(1, "pb\n", 3);
+        write(1, "pa\n", 3);
         return (1);
     }
     return (0);
