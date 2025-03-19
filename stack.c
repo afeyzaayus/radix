@@ -27,14 +27,12 @@ t_stack *stack_add_front(t_stack **stack, t_stack *new)
 	return (*stack);
 }
 
-#include <stdio.h>
 t_stack *free_stack(t_stack *head)
 {
 	t_stack *ptr;
 
 	while (head)
 	{
-		printf("%d\n", head->data);
 		ptr = head;
 		head = head->next;
 		free(ptr);
@@ -56,12 +54,6 @@ t_stack *stack_a_init(char **arr, int len)
 			return (free_stack(head));
 		len--;
 	}
-	t_stack *temp = head;
-	while (temp)
-	{
-		temp = temp->next;
-	}
-	
 	return (head);
 }
 

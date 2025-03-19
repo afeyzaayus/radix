@@ -19,8 +19,6 @@ t_stack *rotate(t_stack **stack)
     }
     ptr->next = temp;
     return (*stack);
-    
-
 }
 
 t_stack *reverse_rotate(t_stack **stack)
@@ -31,17 +29,19 @@ t_stack *reverse_rotate(t_stack **stack)
     if (!(*stack) || !(*stack)->next)
         return (NULL);
     temp = *stack;
-    while (temp)
+    while (temp->next)
     {
-        if (!temp->next)
-            break;
-        if (temp->next && !(temp->next->next))
+        // if (!temp->next)
+        //     break;
+        // if (temp->next && !(temp->next->next))
+        //     end = temp;
+        if (!(temp->next->next))
             end = temp;
         temp = temp->next;        
     }
     end->next = NULL;
     temp->next = (*stack);
-    stack_add_front(stack, temp); //gerekli mi?
+    stack_add_front(stack, temp);
     return (*stack);
 }
 
@@ -60,26 +60,6 @@ int ra(t_stack **stack_a)
     if (rotate(stack_a))
     {
         write(1, "ra\n", 3);
-        return (1);
-    }
-    return (0);
-}
-
-int rrb(t_stack **stack_b)
-{
-    if (reverse_rotate(stack_b))
-    {
-        write(1, "rrb\n", 4);
-        return (1);
-    }
-    return (0);
-}
-
-int rb(t_stack **stack_b)
-{
-    if (rotate(stack_b))
-    {
-        write(1, "rb\n", 3);
         return (1);
     }
     return (0);

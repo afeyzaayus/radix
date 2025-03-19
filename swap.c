@@ -22,20 +22,3 @@ int sa(t_stack **stack)
     }
     return (0);
 }
-
-int sb(t_stack **stack)
-{
-    if (operation_swap(stack))
-    {
-        write(1, "sb\n", 3);
-        return (1);
-    }
-    return (0);
-}
-
-int ss(t_stack **stack_a, t_stack **stack_b)
-{
-    if (sa(stack_a) && sb(stack_b))
-        return (1);
-    return (0);
-}

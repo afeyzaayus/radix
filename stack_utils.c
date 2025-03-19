@@ -2,10 +2,8 @@
 
 int is_sorted(t_stack *stack)
 {
-    while (stack) // stack->next
+    while (stack->next)
     {
-        if (!(stack->next))
-            break;
         if ((stack->data > stack->next->data))
             return (0);
         stack = stack->next;

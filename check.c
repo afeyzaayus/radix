@@ -58,7 +58,10 @@ static int check_args(int argc, char **argv)
 {
 	int i;
 
-	i = 1;
+	if (argc == 2)
+		i = 0;
+	else 
+		i = 1;
 	while (argv[i])
 	{
 		if (!is_valid_number(argv[i]))
@@ -81,7 +84,7 @@ int check_arguments(int argc, char **argv)
 		split = ft_split(argv[1], ' ');
 		if (!split)
 			return (0);
-		i = check_args(ft_strlen_2d(split), split);
+		i = check_args(argc, split);
 		free_arr_2d(split);
 		return(i);
 	}

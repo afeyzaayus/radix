@@ -9,7 +9,6 @@ static int find_rotates(t_stack *stack)
 
     i = 0;
     temp = stack;
-    assign_tag_zero(&stack);
     min = stack_min(temp);
     while (temp != min)
     {
@@ -79,9 +78,9 @@ int sort_small(t_stack **a, t_stack **b)
     {
         smart_rotate(a);
         if (is_sorted(*a))
-        break;
+            break;
         if (!pb(a, b))
-        return (0);
+            return (0);
         i++;
     }
     sort_three(a);
@@ -93,25 +92,25 @@ int sort_small(t_stack **a, t_stack **b)
     return (1);
 }
 
-int sort(t_stack **head_a)
+int sort(t_stack **a)
 {
     int value;
-    t_stack *head_b;
+    t_stack *b;
     int size;
 
-    head_b = NULL;
-    size = stack_size(*head_a);
+    b = NULL;
+    size = stack_size(*a);
     if (size == 2)
-        value = sa(head_a);
+        value = sa(a);
     else if (size <= 6)
     {
-        value = sort_small(head_a, &head_b);
-        free_stack(head_b);
+        value = sort_small(a, &b);
+        free_stack(b);
     }
     else if (size > 6)
     {
-        value = radix_sort(head_a, &head_b);
-        free_stack(head_b);
+        value = radix_sort(a, &b);
+        free_stack(b);
     }
     return (value);
 }

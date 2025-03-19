@@ -14,7 +14,7 @@
     
 // }
 
-int push_swap(char **argv)
+static int push_swap(char **argv)
 {
     t_stack *head;
     char **arr;
