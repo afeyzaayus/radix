@@ -1,4 +1,6 @@
 #include "push_swap.h"
+#include "unistd.h"
+
 
 t_stack *push(t_stack **src, t_stack **dest)
 {

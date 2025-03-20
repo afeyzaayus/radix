@@ -1,4 +1,6 @@
 #include "push_swap.h"
+#include "unistd.h"
+
 
 t_stack *operation_swap(t_stack **stack)
 {

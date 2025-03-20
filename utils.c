@@ -1,5 +1,5 @@
 #include "push_swap.h"
-#include <stdio.h>
+#include "libft/libft.h"
 
 int free_arr_2d(char **arr)
 {

@@ -98,7 +98,7 @@ int sort(t_stack **a)
     t_stack *b;
     int size;
 
-    b = NULL;
+    b = (void*)0;
     size = stack_size(*a);
     if (size == 2)
         value = sa(a);

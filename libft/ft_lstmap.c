@@ -45,15 +45,4 @@ void * f(void* c)
 	return new;
 }
 
-#include <stdio.h>
-
-int main(int argc, char const *argv[])
-{
-	t_list *node1=ft_lstnew(ft_strdup("abc"));
-
-	t_list *p=ft_lstmap(node1, f, free);
-
-	printf("%s ",(char *)p->content);
-	return 0;
-}
 

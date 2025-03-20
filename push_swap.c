@@ -1,18 +1,6 @@
 #include "push_swap.h"
-#include <stdio.h>
+#include "unistd.h"
 
-// void print_list(t_stack **a)
-// {
-//     t_stack *temp;
-
-//     temp = *a;
-//     while (temp)
-//     {
-//         printf("%d ",temp->data);
-//         temp = temp->next;
-//     }
-    
-// }
 
 static int push_swap(char **argv)
 {
@@ -41,8 +29,9 @@ int main(int argc, char *argv[])
     if (!check_arguments(argc, argv))
     {
         write(2, "Error\n", 6);
-        exit(0);
+        return (1);
     }
-    push_swap(argv);
+    if(!push_swap(argv))
+        return (1);
     return 0;
 }

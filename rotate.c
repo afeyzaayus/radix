@@ -1,4 +1,6 @@
 #include "push_swap.h"
+#include "unistd.h"
+
 
 t_stack *rotate(t_stack **stack)
 {

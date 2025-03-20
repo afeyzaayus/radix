@@ -1,5 +1,6 @@
 #include "push_swap.h"
-#include <stdio.h>
+#include "libft/libft.h"
+
 
 static int	is_valid_number(char *str)
 {
