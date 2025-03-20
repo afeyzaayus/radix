@@ -109,6 +109,7 @@ int sort(t_stack **a)
     }
     else if (size > 6)
     {
+        assign_tag(a);
         value = radix_sort(a, &b);
         free_stack(b);
     }

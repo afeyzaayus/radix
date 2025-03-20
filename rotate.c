@@ -33,10 +33,6 @@ t_stack *reverse_rotate(t_stack **stack)
     temp = *stack;
     while (temp->next)
     {
-        // if (!temp->next)
-        //     break;
-        // if (temp->next && !(temp->next->next))
-        //     end = temp;
         if (!(temp->next->next))
             end = temp;
         temp = temp->next;        

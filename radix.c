@@ -12,7 +12,7 @@ static void assign_tag_zero(t_stack **a)
     }
 }
 
-static void assign_tag(t_stack **a)
+void assign_tag(t_stack **a)
 {
     unsigned long i;
     t_stack *min;
@@ -36,23 +36,22 @@ int radix_sort(t_stack **a, t_stack **b)
     int shift;
     int size;
 
-    shift = 0; // en düşük bit ile başla
-    assign_tag(a);
+    shift = 0;
     while (!is_sorted(*a))
     {
         i = 0;
         size = stack_size(*a);
         while (i++ < size)
         {
-            if ((*a)->tag >> shift & 1) // o anki bit 1 ise yerinde kal
+            if ((*a)->tag >> shift & 1)
                 err = ra(a);
             else
-                err = pb(a, b); // 0 biti ise stack b'ye gönder
+                err = pb(a, b);
             if (!err)
                 return (0);
         }
         while ((*b))
-            if (!pa(a, b)) // b içinde kalanları staack a'ya taşı
+            if (!pa(a, b))
                 return (0);
         shift++;
     }
