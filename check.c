@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aserbest <aserbest@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/21 16:33:19 by aserbest          #+#    #+#             */
+/*   Updated: 2025/03/21 16:33:20 by aserbest         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "libft/libft.h"
 
 static int	is_valid_number(char *str)
 {
-	long num;
-	int i;
+	long	num;
+	int		i;
 
 	i = 0;
-	if (str[i] == '-' || str[i] =='+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		i++;
 		if (!ft_isdigit(str[i]))
@@ -30,14 +42,14 @@ static int	is_valid_number(char *str)
 	return (1);
 }
 
-int has_same_number(int argc, char **str)
+int	has_same_number(int argc, char **str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	if (argc == 2)
 		i = 0;
-	else 
+	else
 		i = 1;
 	j = 0;
 	while (str[i])
@@ -54,13 +66,13 @@ int has_same_number(int argc, char **str)
 	return (0);
 }
 
-static int check_args(int argc, char **argv)
+static int	check_args(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	if (argc == 2)
 		i = 0;
-	else 
+	else
 		i = 1;
 	while (argv[i])
 	{
@@ -73,10 +85,10 @@ static int check_args(int argc, char **argv)
 	return (1);
 }
 
-int check_arguments(int argc, char **argv)
+int	check_arguments(int argc, char **argv)
 {
-	char **split;
-	int i;
+	char	**split;
+	int		i;
 
 	if (argc == 2)
 	{
@@ -86,10 +98,9 @@ int check_arguments(int argc, char **argv)
 			return (0);
 		i = check_args(argc, split);
 		free_arr_2d(split);
-		return(i);
+		return (i);
 	}
 	else if (argc > 2)
 		return (check_args(argc, argv));
 	return (1);
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserbest <aserbest@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: aserbest <aserbest@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:35:20 by aserbest          #+#    #+#             */
-/*   Updated: 2024/10/30 10:05:38 by aserbest         ###   ########.fr       */
+/*   Updated: 2025/03/21 16:47:19 by aserbest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

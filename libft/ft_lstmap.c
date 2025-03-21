@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserbest <aserbest@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: aserbest <aserbest@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:40:58 by aserbest          #+#    #+#             */
-/*   Updated: 2024/10/29 18:41:21 by aserbest         ###   ########.fr       */
+/*   Updated: 2025/03/21 16:45:59 by aserbest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_node->next = ft_lstmap(lst->next, f, del);
 	return (new_node);
 }
-
-void * f(void* c)
-{
-	char *ptr= (char*)c;
-	char *new = malloc(sizeof(c) + 1);
-
-	int i =0;
-	while (ptr[i])
-	{
-		new[i]=ptr[i];
-		i++;
-	}
-	return new;
-}
-
-

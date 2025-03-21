@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserbest <aserbest@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 16:27:16 by aserbest          #+#    #+#             */
-/*   Updated: 2025/03/21 16:28:00 by aserbest         ###   ########.fr       */
+/*   Created: 2025/03/21 16:44:51 by aserbest          #+#    #+#             */
+/*   Updated: 2025/03/21 16:45:45 by aserbest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "unistd.h"
-
-t_stack	*push(t_stack **src, t_stack **dest)
+static int	ft_isspace(int c)
 {
-	t_stack	*temp;
-
-	if (!(*src))
-		return (NULL);
-	temp = (*src);
-	*src = (*src)->next;
-	return (stack_add_front(dest, temp));
-}
-
-int	pb(t_stack **a, t_stack **b)
-{
-	if (push(a, b))
-	{
-		write(1, "pb\n", 3);
+	if (c == ' ' || (c >= 9 && c <= 13))
 		return (1);
-	}
 	return (0);
 }
 
-int	pa(t_stack **a, t_stack **b)
+long	ft_atol(const char *str)
 {
-	if (push(b, a))
+	int		i;
+	int		sign;
+	long	result;
+
+	i = 0;
+	result = 0;
+	sign = 1;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		write(1, "pa\n", 3);
-		return (1);
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	return (0);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }

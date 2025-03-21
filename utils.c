@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aserbest <aserbest@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/21 16:43:20 by aserbest          #+#    #+#             */
+/*   Updated: 2025/03/21 16:45:17 by aserbest         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "libft/libft.h"
 
-int free_arr_2d(char **arr)
+int	free_arr_2d(char **arr)
 {
-	int i;
+	int	i;
 
 	if (!arr || !(*arr))
 		return (0);
@@ -17,21 +29,21 @@ int free_arr_2d(char **arr)
 	return (0);
 }
 
-int ft_strlen_2d(char **arr)
+int	ft_strlen_2d(char **arr)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (arr[i])
 		i++;
 	return (i);
 }
 
-char **ft_strjoin_2d(char **arr, char **split)
+char	**ft_strjoin_2d(char **arr, char **split)
 {
-	char **ptr;
-	int i;
-	int j;
+	char	**ptr;
+	int		i;
+	int		j;
 
 	i = ft_strlen_2d(arr);
 	j = ft_strlen_2d(split);
@@ -53,11 +65,11 @@ char **ft_strjoin_2d(char **arr, char **split)
 	return (ptr);
 }
 
-char **parse_args(char **argv)
+char	**parse_args(char **argv)
 {
-	char **arr;
-	char **split;
-	int i;
+	char	**arr;
+	char	**split;
+	int		i;
 
 	arr = ft_calloc(1, sizeof(char *));
 	if (!arr)
@@ -67,10 +79,10 @@ char **parse_args(char **argv)
 	{
 		split = ft_split(argv[i], ' ');
 		if (!split)
-			break;
+			break ;
 		arr = ft_strjoin_2d(arr, split);
 		if (!arr)
-			break;
+			break ;
 		i++;
 		free(split);
 	}
@@ -80,37 +92,4 @@ char **parse_args(char **argv)
 		return (NULL);
 	}
 	return (arr);
-}
-
-
-static int	ft_isspace(int c)
-{
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
-}
-
-long	ft_atol(const char *str)
-{
-	int     i;
-	int     sign;
-	long	result;
-
-	i = 0;
-	result = 0;
-	sign = 1;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = (result * 10) + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
 }
