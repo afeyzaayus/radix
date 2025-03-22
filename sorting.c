@@ -6,7 +6,7 @@
 /*   By: aserbest <aserbest@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:36:54 by aserbest          #+#    #+#             */
-/*   Updated: 2025/03/21 16:39:14 by aserbest         ###   ########.fr       */
+/*   Updated: 2025/03/22 15:36:45 by aserbest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ int	sort(t_stack **a)
 
 	b = (void *)0;
 	size = stack_size(*a);
+	assign_tag(a);
 	if (size == 2)
 		value = sa(a);
 	else if (size <= 6)
@@ -124,7 +125,6 @@ int	sort(t_stack **a)
 	}
 	else if (size > 6)
 	{
-		assign_tag(a);
 		value = radix_sort(a, &b);
 		free_stack(b);
 	}
