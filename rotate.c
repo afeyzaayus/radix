@@ -6,7 +6,7 @@
 /*   By: aserbest <aserbest@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:33:13 by aserbest          #+#    #+#             */
-/*   Updated: 2025/03/21 16:33:14 by aserbest         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:03:47 by aserbest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ t_stack	*rotate(t_stack **stack)
 	*stack = (*stack)->next;
 	temp->next = NULL;
 	ptr = *stack;
-	while (ptr)
-	{
-		if (!ptr->next)
-			break ;
+	while (ptr->next)
 		ptr = ptr->next;
-	}
 	ptr->next = temp;
 	return (*stack);
 }

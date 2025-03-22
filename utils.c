@@ -6,11 +6,10 @@
 /*   By: aserbest <aserbest@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:43:20 by aserbest          #+#    #+#             */
-/*   Updated: 2025/03/21 16:45:17 by aserbest         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:14:06 by aserbest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft/libft.h"
 
 int	free_arr_2d(char **arr)
